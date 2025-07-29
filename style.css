@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -26,9 +26,9 @@ body{
             border-bottom: 2px solid hsl(0, 0%, 100%);
             position: fixed;
             top: 0;
-            z-index: 1000;
+            z-index: 10;
             width: 100%;  
-        }
+}
 .d1{
     display: flex;
     padding-right: 20px;
@@ -38,6 +38,7 @@ body{
 }
 .d2{
     display: flex;
+    width: auto;
 }
 .d2:hover{
     cursor: pointer;
@@ -47,17 +48,17 @@ body{
     transition: transform 0.3s ease;
     text-decoration: none;
     color:hsl(180, 100%, 97%) ;
+    display: flex;
 }
 .h:hover{
     transform: scale(1.05);
     color:hsl(59, 88%, 67%);
 }
 .fdiv{
-    margin-left: 15%;
     margin-top: 16%;
     color: hsl(180, 100%, 97%);
+    padding: 5%;
 }
-
 #bar{
     opacity: 0;
     transform: translateY(200%);
@@ -81,7 +82,10 @@ body{
     background-color: hsla(0, 0%, 100%, 1);
     box-shadow: 2px 2px 20px 10px hsla(0, 0%, 0%, 0.6);
     transition: transform 1s ease;
-    margin:10% 16%;
+    margin: 10% auto;
+    width: 77%;       
+    max-width: 1200px; 
+    padding: 20px; 
 }
 .container:hover{
     transform: scale(1.01);
@@ -97,15 +101,17 @@ body{
 }
 .inner-container{
     display: flex;
-    margin-bottom: 0;
+    flex-wrap: wrap;          
+    justify-content: space-around;
+    gap: 20px;
 }
-
 .box{
     text-align: center;
     margin:5% 10px;
-    width: 33.33%;
-    height: 430px;
-    transition: transform 0.3s ease,box-shadow 0.3s ease; 
+    flex: 1 1 300px;   
+    max-width: 400px;  
+    height: auto;
+    transition : transform 0.3s ease,box-shadow 0.3s ease; 
     padding: 10px 10px;
 }
 #b1{
@@ -135,11 +141,12 @@ body{
 }
 button a{
     color: hsl(180, 100%, 97%);
+    cursor: pointer;
+
 }
 button {
   padding: 17px 40px;
   border-radius: 50px;
-  cursor: pointer;
   border: 0;
   background-color: hsl(261, 100%, 30%);
   box-shadow: hsla(0, 0%, 0%, 0.05) 0 0 8px;
@@ -147,7 +154,8 @@ button {
   text-transform: uppercase;
   font-size: 15px;
   transition: all 0.5s ease;
-  margin: 20px 40%;
+  margin: 20px auto;
+  width: auto;
 }
 button:hover {
   letter-spacing: 3px;
@@ -178,8 +186,11 @@ button:active #register{
     display: flex;
     flex-direction: column;
     background-color: hsl(240, 28%, 14%);
-    margin: 10% 15%;
-    height: 650px;
+    margin: 10% auto;     
+    padding: 2% 5% 0 5%; 
+    width: 90%;
+    max-width: 1200px;
+    min-height: 650px; 
     text-align: center;
     padding: 2% 5%;
     padding-bottom: 0;
@@ -192,13 +203,19 @@ button:active #register{
     gap: 10px;
     align-items: flex-start;
     font-size: larger;
-    margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 40px;
+    flex-wrap: wrap;         
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 5%;
 }
 .in-c1-1{
     display: flex;
     flex-direction: column;
     margin-right: 100px;
+    flex: 1 1 300px;
+    max-width: 500px;
+    align-items: center;
 }
 .li1{
     padding: 10px 20px;
@@ -214,13 +231,15 @@ button:active #register{
 }
 .image-stack {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
 }
 .image-stack img {
     position: absolute;
-    height:300px;
-    width: 300px; 
+    height: 250px;
+    width: 250px;
+    max-width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
@@ -240,18 +259,17 @@ button:active #register{
     top: 40px;
     left: 200px;
 }
-
 .image-stack:hover img {
   transform: scale(1.05);
 }
 .image-stack:hover #bg1{
-    transform: translateX(-75px);
+    transform: translateX(-110px);
 }
 .image-stack:hover #bg2{
     transform: translateY(125px);
 }
 .image-stack:hover #bg3{
-    transform: translateX(175px);
+    transform: translateX(105px);
 }
 #cus:hover{
     color: hsl(0, 71%, 49%);
@@ -259,10 +277,39 @@ button:active #register{
 .n2{
     display: flex;
     border-top: 2px solid hsl(0, 86%, 97%);
-    height: 250px;
+    height: auto;
     background-color:  hsl(205, 48%, 65%);
-    padding-left: 30%;
-    padding-right: 20%;
+    padding: 40px 5%;   
+    justify-content: center;
+    gap: 20px;
+}
+@media (max-width: 768px) {
+    .box {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .fdiv {
+        margin-top: 120px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .in-c1 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .image-stack img {
+        height: 200px;
+        width: 200px;
+    }
+    .n1 {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    .d2 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 #last{
     display: flex;
